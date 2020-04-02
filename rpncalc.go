@@ -19,7 +19,9 @@ func dc(in string) int {
 	var stack []int = make([]int, 0)
 	var tmp int
 	var inNum bool = false
+
 	for _, c := range in {
+		//fmt.Println(string(c), stack)
 		if unicode.IsDigit(c) && !inNum {
 			tmp = int(c) - 48
 			inNum = true
