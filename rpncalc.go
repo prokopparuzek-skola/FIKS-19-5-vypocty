@@ -27,8 +27,10 @@ func dc(in string) int {
 			tmp *= 10
 			tmp += int(c) - 48
 		} else {
-			add(&stack, tmp)
-			inNum = false
+			if inNum {
+				add(&stack, tmp)
+				inNum = false
+			}
 			switch c {
 			case '+':
 				a := drop(&stack)
